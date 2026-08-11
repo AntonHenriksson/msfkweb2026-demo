@@ -1,1 +1,0 @@
-This demo repo is auto-generated from nginx/www in AntonHenriksson/msfkweb2026.

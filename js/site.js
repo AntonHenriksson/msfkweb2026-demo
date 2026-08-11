@@ -2,8 +2,8 @@ const list = document.getElementById('news-list');
 const isDemo = location.hostname.endsWith('github.io');
 
 const demoArticles = [
-  { id: 99, title: 'Premiärfiske i Bredagyl', body: 'Lördag 18 april är det äntligen dags för årets fiskepremiär i Bredagyl! Välkomna till klubbsjön.', createdAt: Date.now() - 86400000, published: true, imagePath: null },
-  { id: 98, title: 'Årsmöte', body: 'Alla medlemmar hälsas hjärtligt välkomna till årsmötet i klubblokalen. Kaffe och fika serveras!', createdAt: Date.now() - 172800000, published: true, imagePath: null },
+  { id: 99, title: 'Premiärfiske i Bredagyl', body: 'Lördag 18 april är det äntligen dags för årets fiskepremiär i Bredagyl! Välkomna till klubbsjön.', createdAt: Date.UTC(2026, 3, 1), published: true, imagePath: null },
+  { id: 98, title: 'Årsmöte', body: 'Alla medlemmar hälsas hjärtligt välkomna till årsmötet i klubblokalen. Kaffe och fika serveras!', createdAt: Date.UTC(2026, 0, 25), published: true, imagePath: null },
 ];
 
 async function load() {
