@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin – Nyheter · Mieådalens SFK</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    .toolbar h1 { font-size: 1.3rem; color: var(--blue-dark); margin: 0; }
+    .news-row {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 8px; padding: 14px 16px; margin-bottom: 10px;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    }
+    .news-row .meta { color: var(--muted); font-size: .85rem; }
+    .badge { font-size: .75rem; padding: 2px 8px; border-radius: 999px; }
+    .badge.pub { background: var(--blue-light); color: var(--blue-dark); }
+    .badge.draft { background: #f3e9d2; color: #8a6d1a; }
+    .editor {
+      display: none; background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px; margin-bottom: 20px;
+    }
+    .editor.show { display: block; }
+    label { display: block; margin: 12px 0 4px; font-size: .9rem; color: var(--muted); }
+    input[type=text], textarea {
+      width: 100%; padding: 10px; border: 1px solid var(--border);
+      border-radius: 8px; font: inherit;
+    }
+    textarea { min-height: 160px; resize: vertical; }
+    .editor-actions { margin-top: 16px; display: flex; gap: 10px; align-items: center; }
+    .img-preview { max-width: 240px; margin-top: 10px; border-radius: 8px; display: none; }
+    .check { display: flex; align-items: center; gap: 8px; margin-top: 14px; }
+    .check label { margin: 0; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="toolbar">
+      <h1>Nyheter – Admin</h1>
+      <div>
+        <button class="btn" id="new-btn">Ny artikel</button>
+        <a class="btn secondary" href="./" style="margin-left:8px">Visa sida</a>
+        <button class="btn danger" id="logout-btn" style="margin-left:8px">Logga ut</button>
+      </div>
+    </div>
+
+    <div class="editor" id="editor">
+      <h2 id="editor-title">Ny artikel</h2>
+      <input type="hidden" id="field-id">
+      <label for="field-title">Rubrik</label>
+      <input type="text" id="field-title" placeholder="T.ex. Premiärfiske i Bredagyl">
+      <label for="field-body">Text</label>
+      <textarea id="field-body" placeholder="Skriv nyheten här…"></textarea>
+      <div class="check">
+        <input type="checkbox" id="field-published" checked>
+        <label for="field-published">Publicerad (synlig på startsidan)</label>
+      </div>
+      <label for="field-image">Bild (valfritt)</label>
+      <input type="file" id="field-image" accept="image/*">
+      <img class="img-preview" id="img-preview" alt="">
+      <div class="editor-actions">
+        <button class="btn" id="save-btn">Spara</button>
+        <button class="btn secondary" id="cancel-btn">Avbryt</button>
+        <span id="editor-status" style="color:var(--muted)"></span>
+      </div>
+    </div>
+
+    <div id="list"><p class="empty">Laddar…</p></div>
+  </main>
+  <script src="js/admin.js"></script>
+</body>
+</html>

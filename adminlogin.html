@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin – Logga in · Mieådalens SFK</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .auth-card {
+      max-width: 360px;
+      margin: 12vh auto;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+    .auth-card h1 { font-size: 1.2rem; margin-top: 0; }
+    label { display: block; margin: 14px 0 4px; font-size: .9rem; color: var(--muted); }
+    input[type=text], input[type=password] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    .error { color: #b3423a; font-size: .9rem; min-height: 1.2em; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="auth-card">
+      <h1>Admin – Logga in</h1>
+      <form id="login-form">
+        <label for="username">Användarnamn</label>
+        <input type="text" id="username" name="username" autocomplete="username" required>
+        <label for="password">Lösenord</label>
+        <input type="password" id="password" name="password" autocomplete="current-password" required>
+        <div class="error" id="error"></div>
+        <button class="btn" type="submit" style="width:100%;margin-top:14px" id="login-btn">Logga in</button>
+      </form>
+    </div>
+  </main>
+  <script src="js/adminlogin.js"></script>
+</body>
+</html>
