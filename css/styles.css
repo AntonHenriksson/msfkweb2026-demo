@@ -132,6 +132,12 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.fee-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  border-color: var(--blue);
 }
 .fee-name { font-weight: 700; font-size: 1.05rem; color: var(--blue-dark); }
 .fee-desc { color: var(--muted); font-size: .88rem; flex: 1; }
