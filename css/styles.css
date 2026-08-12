@@ -166,9 +166,14 @@ h2 {
 .sportfiskarna-logo {
   display: block;
   width: 100%;
-  max-width: 280px;
+  max-width: 520px;
   height: auto;
   margin: 0 auto;
+}
+@media (max-width: 600px) {
+  .sportfiskarna-logo {
+    max-width: none;
+  }
 }
 
 .partner-logo {
