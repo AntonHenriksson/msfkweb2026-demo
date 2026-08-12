@@ -168,24 +168,97 @@ h2 {
   display: grid;
   gap: 14px;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  perspective: 1000px;
 }
 
 .fee-card {
+  background: transparent;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0;
+  min-width: 0;
+  height: 200px;
+  cursor: pointer;
+}
+
+.fee-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  border-radius: var(--radius);
+}
+
+.fee-card.flipped .fee-card-inner {
+  transform: rotateY(180deg);
+}
+
+.fee-card-front,
+.fee-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.fee-card-front {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 16px 18px;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.fee-card:hover {
+.fee-card:hover .fee-card-front {
   transform: translateY(-4px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
   border-color: var(--blue);
+}
+
+.fee-card-back {
+  background: var(--blue);
+  color: #fff;
+  border: 1px solid var(--blue-dark);
+  transform: rotateY(180deg);
+  border-radius: var(--radius);
+}
+
+.fee-card-back h3 {
+  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 10px;
+  margin-bottom: 16px;
+}
+
+.fee-card-back p {
+  margin: 8px 0;
+  font-size: .9rem;
+}
+
+.fee-card-back .flip-back {
+  margin-top: 16px;
+  background: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.3);
+  color: #fff;
+}
+
+.fee-card-back .flip-back:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.flip-hint {
+  margin-top: 12px;
+  font-size: .75rem;
+  color: var(--muted);
+  font-style: italic;
 }
 
 .fee-name {

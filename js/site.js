@@ -6,6 +6,37 @@ const demoArticles = [
   { id: 98, title: 'Årsmöte', body: 'Alla medlemmar hälsas hjärtligt välkomna till årsmötet i klubblokalen. Kaffe och fika serveras!', createdAt: Date.UTC(2026, 0, 25), published: true, imagePath: null },
 ];
 
+// Fee card flip functionality
+function initFeeCardFlip() {
+  const feeCards = document.querySelectorAll('.fee-card');
+  
+  feeCards.forEach(card => {
+    // Click on card to flip
+    card.addEventListener('click', (e) => {
+      // Don't flip if clicking the back button
+      if (e.target.closest('.flip-back')) return;
+      card.classList.toggle('flipped');
+    });
+    
+    // Handle back button
+    const backBtn = card.querySelector('.flip-back');
+    if (backBtn) {
+      backBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        card.classList.remove('flipped');
+      });
+    }
+    
+    // Keyboard accessibility
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        card.classList.toggle('flipped');
+      }
+    });
+  });
+}
+
 async function load() {
   try {
     const res = await fetch('api/news');
@@ -49,3 +80,5 @@ function escapeHtml(s) {
 }
 
 load();
+
+initFeeCardFlip();
