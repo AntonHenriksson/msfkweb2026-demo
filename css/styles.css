@@ -116,9 +116,9 @@ h2 {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 .fee-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  background: var(--blue-light);
+  border-left: 4px solid var(--blue);
+  border-radius: 8px;
   padding: 16px 18px;
   min-width: 0;
   display: flex;
