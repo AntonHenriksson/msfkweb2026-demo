@@ -49,6 +49,14 @@ header {
   font-weight: 800;
   font-size: 1.25rem;
   letter-spacing: .3px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
 }
 
 .brand small { display: block; font-weight: 400; font-size: .8rem; opacity: .85; }
@@ -201,6 +209,28 @@ footer {
 }
 .fb-link:hover { background: #1666d4; }
 .fb-link svg { width: 18px; height: 18px; }
+
+.partner-logos {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  width: 100%;
+}
+.partner-logos a {
+  display: block;
+}
+.partner-logos img {
+  height: 40px;
+  width: auto;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+.partner-logos img:hover {
+  opacity: 1;
+}
 
 .btn {
   display: inline-block;
