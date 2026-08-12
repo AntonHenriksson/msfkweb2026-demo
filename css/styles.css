@@ -151,6 +151,13 @@ h2 {
 .included-note a { text-decoration: none; }
 .included-note a:hover { text-decoration: underline; }
 
+.partner-logo {
+  display: inline-block;
+  height: 1.2em;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
 .contact-card {
   background: var(--card);
   border: 1px solid var(--border);
