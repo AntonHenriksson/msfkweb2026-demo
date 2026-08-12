@@ -17,12 +17,7 @@ body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   color: var(--ink);
   background-color: #f4f8fb;
-  background-image: url('../msfkbackground.jpeg');
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
   line-height: 1.6;
-  min-height: 100vh;
 }
 
 a { color: var(--blue); }
@@ -72,11 +67,23 @@ main { max-width: 1000px; margin: 0 auto; padding: 24px; }
   background: linear-gradient(135deg, var(--blue-dark), var(--blue));
   color: #fff;
   border-radius: var(--radius);
-  padding: 36px 32px;
+  padding: 120px 32px 80px;
   margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+  background-image: url('../msfkbackground.jpeg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
 }
-.hero h1 { margin: 0 0 8px; font-size: 1.8rem; }
-.hero p { margin: 0; opacity: .92; max-width: 640px; }
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+  opacity: 0.75;
+}
+.hero h1, .hero p { position: relative; z-index: 1; }
 
 section { margin-bottom: 40px; }
 
